@@ -38,8 +38,8 @@ public class Ejercicto {
         this.dinero = dinero;
     }
 
-    public void setSoldado(ArrayList<Soldado> soldado) {
-        this.soldado = soldado;
+    public void setSoldado(Soldado soldado){
+        this.soldado.add(soldado);
     }
 
     public String getNombre() {
@@ -64,7 +64,8 @@ public class Ejercicto {
 
     @Override
     public String toString() {
-        return "Ejercicto{" + "nombre=" + nombre + ", region=" + region + ", cantVictorias=" + cantVictorias + ", dinero=" + dinero + ", soldado=" + soldado + '}';
+        String patron = "|%20s|%20s|%11d|%6.2f|";
+        return String.format(patron, this.getNombre(), this.getRegion(), this.getCantVictorias(), this.getDinero());
     }
     
     
