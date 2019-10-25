@@ -10,8 +10,8 @@ public class General extends Soldado{
     public General() {
     }
 
-    public General(int añoAlMando, Arma arma, String nombre, String lugar, String sexo) {
-        super(nombre, lugar, sexo);
+    public General(int añoAlMando, Arma arma, String nombre, String lugar, String sexo, int edad) {
+        super(nombre, lugar, sexo, edad);
         this.añoAlMando = añoAlMando;
         this.arma = arma;
     }
