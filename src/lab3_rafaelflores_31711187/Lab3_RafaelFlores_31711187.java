@@ -276,27 +276,26 @@ public class Lab3_RafaelFlores_31711187 {
                     ListarSoldado(soldado);
                     break;
                 case 9:
-                    /*if (registro.isEmpty()) {
-                            System.out.println("No hay nada que mostrar!");
-                        }else{
-                            Listar(registro);
-                            System.out.println("Ingrese la posición a modificar: ");
-                            pos = read.nextInt();
-                            if (pos < 0 || pos > registro.size() - 1) {
-                                System.out.println("Abortando! Debe ingresar una posición válida");
-                            } else {
-                                System.out.println("Ingrese el número de lo que desea modificar:"
-                                        + "\n\t 1. Nombre de la Universida"
-                                        + "\n\t 2. Nombre del Rector"
-                                        + "\n\t 3. Sucursal"
-                                        + "\n\t 4. Año de Creación"
-                                        + "\n\t 5. Número de Maestros"
-                                        + "\n\t 6. Numero de Estudiantes");
-                                int modOp = read.nextInt();
-                                Modificar(registro, pos, modOp, "");
-                                System.out.println("Su Modificación fue exitosa!");
-                            }
-                        }*/
+                    if (ejercito.isEmpty()) {
+                        System.out.println("No hay nada que mostrar!");
+                    } else {
+                        ListarEjercito();
+                        System.out.println("Ingrese la posición a modificar: ");
+                        pos = read.nextInt();
+                        if (pos < 0 || pos > ejercito.size() - 1) {
+                            System.out.println("Abortando! Debe ingresar una posición válida");
+                        } else {
+                            System.out.println("Ingrese el número de lo que desea modificar:"
+                                    + "\n\t 1. Nombre del ejercito"
+                                    + "\n\t 2. Regio del ejercito"
+                                    + "\n\t 3. Cantidad de victorias"
+                                    + "\n\t 4. Cantidad de dinero");
+                            int modOp = read.nextInt();
+                            Modificar(ejercito, pos, modOp, "");
+                            System.out.println("Su Modificación fue exitosa!");
+                        }
+
+                    }
                     break;
                 case 10://eliminar arma
                     System.out.print("Ingrese la posicion de la arma que quiere eliminar: ");
@@ -735,34 +734,24 @@ public class Lab3_RafaelFlores_31711187 {
     }
     //comenza aqui
     
-    /*public static void Modificar(ArrayList<Ejercicto> temp, int pos, int op, String nivel){
+    public static void Modificar(ArrayList<Ejercicto> temp, int pos, int op, String nivel){
         switch(op){
             case 1:
-                System.out.println("Ingrese el nuevo Nombre de la Universidad");
+                System.out.println("Ingrese el nuevo Nombre del ejercito: ");
                 temp.get(pos).setNombre(read.next());
                 break;
             case 2:
-                System.out.println("Ingrese el nuevo nombre del Rector de la Universidad");
-                temp.get(pos).setNombreRector(read.next());
+                System.out.println("Ingrese la nueva region del ejercito");
+                temp.get(pos).setRegion(read.next());
                 break;
             case 3:
-                System.out.println("Ingrese la nueva Sucursal de la Universidad");
-                temp.get(pos).setSucursal(read.next());
+                System.out.println("Ingrese la nueva cantidad de victorias del ejercito");
+                temp.get(pos).setCantVictorias(read.nextInt());
                 break;
             case 4:
-                System.out.println("Ingrese el nuevo Año de creación de la Universidad");
-                temp.get(pos).setAñoCreacion(read.nextInt());
+                System.out.println("Ingrese la nueva cantidad de dinero que posee el ejercito");
+                temp.get(pos).setDinero(read.nextInt());
                 break;
-            case 5:
-                System.out.println("Ingrese la nueva cantidad de Maestros de la Universidad");
-                temp.get(pos).setNumMaestro(read.nextInt());
-                break;
-            case 6:
-                System.out.println("Ingrese la nueva cantidad de Alumnos de la Universidad");
-                temp.get(pos).setNumEstudiante(read.nextInt());
-                break;
-            case 7:
-                temp.get(pos).setNivel(nivel);
-                break;
-        }*/
+        }
+    }
 }
