@@ -1,14 +1,39 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+Clase Padre Arma
  */
 package lab3_rafaelflores_31711187;
 
-/**
- *
- * @author Faith
- */
 public class Arma {
+    protected String nombre;
+    protected float precio;
+
+    public Arma() {
+    }
+
+    public Arma(String nombre, float precio) {
+        this.nombre = nombre;
+        this.precio = precio;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setPrecio(float precio) {
+        this.precio = precio;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public float getPrecio() {
+        return precio;
+    }
+
+    @Override
+    public String toString() {
+        return "Arma{" + "nombre=" + nombre + ", precio=" + precio + '}';
+    }
     
 }

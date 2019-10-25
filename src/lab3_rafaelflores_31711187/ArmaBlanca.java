@@ -1,14 +1,31 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Clase hija - ArmaBlanca
  */
 package lab3_rafaelflores_31711187;
 
-/**
- *
- * @author Faith
- */
-public class ArmaBlanca {
+public class ArmaBlanca extends Arma{
+    private String material;
+
+    public ArmaBlanca() {
+    }
+
+    public ArmaBlanca(String material, String nombre, float precio) {
+        super(nombre, precio);
+        this.material = material;
+    }
+
+    public void setMaterial(String material) {
+        this.material = material;
+    }
+
+    public String getMaterial() {
+        return material;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString()+"ArmaBlanca{" + "material=" + material + '}';
+    }
+    
     
 }

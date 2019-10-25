@@ -1,14 +1,33 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Clase Hija - Caballero
  */
 package lab3_rafaelflores_31711187;
 
-/**
- *
- * @author Faith
- */
-public class Caballero {
+public class Caballero extends Soldado{
+    private Arma arma;
+
+    public Caballero() {
+    }
+
+    public Caballero(Arma arma, String nombre, String lugar, String sexo) {
+        super(nombre, lugar, sexo);
+        this.arma = arma;
+    }
+
+    
+
+    public void setArma(Arma arma) {
+        this.arma = arma;
+    }
+
+    public Arma getArma() {
+        return arma;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString()+"Caballero{" + "arma=" + arma + '}';
+    }
+    
     
 }
