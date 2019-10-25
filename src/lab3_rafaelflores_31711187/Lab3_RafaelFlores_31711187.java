@@ -11,6 +11,9 @@ public class Lab3_RafaelFlores_31711187 {
     public static ArrayList<Soldado> soldado = new ArrayList();
     public static ArrayList<Arma> armas = new ArrayList();
     public static String[][] Tablero = new String[10][10];
+    public static String[][] vistaJ1 = new String[10][10];
+    public static String[][] vistaJ2 = new String[10][10];
+    
     
     
     
@@ -554,9 +557,38 @@ public class Lab3_RafaelFlores_31711187 {
     
     
     
+   public static void ListarEjercito(){
+       System.out.println("+-----+--------------------+--------------------+-----------+--------+");
+       System.out.println("| No. |       Nombre       |       Region       | Victorias | Dinero |");
+       System.out.println("+-----+--------------------+--------------------+-----------+--------+");
+       for (int i = 0; i < ejercito.size(); i++) {
+           System.out.println("|  "+i+"  |"+ejercito.get(i).toString());
+           System.out.println("+-----+--------------------+--------------------+-----------+--------+");
+       }
+   } 
     
+   public static void ListarSoldado(){
+       System.out.println("+-----+--------------------+--------------------+------+------+--------------+------+-------+------+");
+       System.out.println("| No. |       Nombre       |       Lugar        | Sexo | Edad | Año al Mando | Arma | Bomba | Tipo |");
+       System.out.println("+-----+--------------------+--------------------+------+------+--------------+------+-------+------+");
+       for (int i = 0; i < ejercito.size(); i++) {
+           System.out.println("|  "+i+"  |"+ejercito.get(i).toString()+" | "+ejercito.get(i).getClass().getName());
+           System.out.println("+-----+--------------------+--------------------+------+------+--------------+------+-------+------+");
+       }
+   }
+   
+   public static void ListarArma(){
+       System.out.println("+-----+--------------------+--------------------+-----------+---------+------------+");
+       System.out.println("| No. |       Nombre       |       Precio       | Material  | Alcance | Automatica |");
+       System.out.println("+-----+--------------------+--------------------+-----------+---------+------------+");
+       for (int i = 0; i < ejercito.size(); i++) {
+           System.out.println("|  "+i+"  |"+ejercito.get(i).toString()+" | "+ejercito.get(i).getClass().getName());
+           System.out.println("+-----+--------------------+--------------------+-----------+--------+");
+       }
+   }
     
-    
-    
+    public static void InitJuego(){
+        
+    }
     //comenza aqui
 }
