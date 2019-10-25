@@ -319,7 +319,7 @@ public class Lab3_RafaelFlores_31711187 {
                     ListarSoldado(soldado);
                     break;
                 case 9:
-                    
+                    //ya lo vamos a ahcer
                     break;
                 case 10://eliminar arma
                     System.out.print("Ingrese la posicion de la arma que quiere eliminar: ");
