@@ -57,6 +57,10 @@ public class Ejercicto {
     public float getDinero() {
         return dinero;
     }
+    
+    public Soldado getSoldadoEspecifico(int pos) {
+        return soldado.get(pos);
+    }
 
     public ArrayList<Soldado> getSoldado() {
         return soldado;

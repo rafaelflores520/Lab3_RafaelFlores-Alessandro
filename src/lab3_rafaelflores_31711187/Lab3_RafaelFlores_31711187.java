@@ -4,6 +4,7 @@
 package lab3_rafaelflores_31711187;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Set;
 
 public class Lab3_RafaelFlores_31711187 {
     public static Scanner read = new Scanner(System.in);
@@ -192,14 +193,66 @@ public class Lab3_RafaelFlores_31711187 {
                     }
                     break;
                 case 4:
-                    System.out.print("Cual es el nombre del arma: ");
-                    name = read.next();
-                    System.out.print("Cual es el valor de "+name+" : ");
-                    int precio = read.nextInt();
-                    Arma am = new Arma();
-                    am.setNombre(name);
-                    am.setPrecio(precio);
-                    armas.add(am);
+                    System.out.print("Que tipo de arma es[1-bomba][2-rifle][3-arma blanca]");
+                    int tipo = read.nextInt();
+                    int precio, alcance;
+                    String material;
+                    boolean aut;
+                    switch(tipo){
+                        case 1://bomba
+                            System.out.print("Cual es el nombre de la bomba: ");
+                            name = read.next();
+                            System.out.print("Cual es el valor de " + name + " : ");
+                            precio = read.nextInt();
+                            System.out.print("Cual es el material de "+name+" : ");
+                            material = read.next();
+                            System.out.print("Cual es el alcance de la bomba: ");
+                            alcance = read.nextInt();
+                            Arma am = new Bomba();
+                            am.setNombre(name);
+                            am.setPrecio(precio);
+                            ((Bomba)am).setAreaAlcance(alcance);
+                            ((Bomba)am).setMaterial(material);
+                            armas.add(am);
+                            break;
+                        case 2://rifle
+                            System.out.print("Cual es el nombre del rifle: ");
+                            name = read.next();
+                            System.out.print("Cual es el valor de " + name + " : ");
+                            precio = read.nextInt();
+                            System.out.print("EL arma es automatica [1=si][2=no]: ");
+                            int respuesta = read.nextInt();
+                            if(respuesta == 1)
+                                aut = true;
+                            else
+                                aut = false;
+                            System.out.print("Cual es el alcance maximo del rifle: ");
+                            int alcanceMax = read.nextInt();
+                            System.out.print("Cual es el alcance minimo del rifle: ");
+                            int alcanceMin = read.nextInt();
+                            Arma RF = new Rifle();
+                            RF.setNombre(name);
+                            RF.setPrecio(precio);
+                            ((Rifle)RF).setEsAutomática(aut);
+                            ((Rifle)RF).setLinealAlcanceMax(alcanceMax);
+                            ((Rifle)RF).setLinealAlcanceMin(alcanceMin);
+                            armas.add(RF);
+                            break;
+                        case 3://arma blanca
+                            System.out.print("Cual es el nombre de la bomba: ");
+                            name = read.next();
+                            System.out.print("Cual es el valor de " + name + " : ");
+                            precio = read.nextInt();
+                            System.out.print("Cual es el material de "+name+" : ");
+                            material = read.next();
+                            Arma AB = new ArmaBlanca();
+                            AB.setNombre(name);
+                            AB.setPrecio(precio);
+                            ((ArmaBlanca)AB).setMaterial(material);
+                            armas.add(AB);
+                            break;
+                    }
+                    
                     break;
                 case 5:
                     System.out.print("Ingrese la posicion del ejercito a la que quiere entrar: ");
@@ -214,6 +267,26 @@ public class Lab3_RafaelFlores_31711187 {
                         } else {
                             if (ejercito.get(pos).getDinero() < armas.get(gun).getPrecio()){
                                 System.out.print("No tiene suficiente dinero");
+                                break;
+                            }else{
+                                ListarSoldado(ejercito.get(pos).getSoldado());
+                                System.out.print("A que soldado se la quiere agregar: ");
+                                int m = read.nextInt();
+                                switch(ejercito.get(pos).getSoldadoEspecifico(m).getClass().getSimpleName()){
+                                    case "General":
+                                        Soldado g = ejercito.get(pos).getSoldadoEspecifico(m);
+                                        ((General)g).setArma(armas.get(gun));
+                                        break;
+                                    case "Caballero":
+                                        Soldado c = ejercito.get(pos).getSoldadoEspecifico(m);
+                                        ((General)c).setArma(armas.get(gun));
+                                        break;
+                                    case "Ejecutor":
+                                        Soldado e = ejercito.get(pos).getSoldadoEspecifico(m);
+                                        ((General)e).setArma(armas.get(gun));
+                                        break;
+                                }
+                                
                             }
 
                         }
