@@ -179,7 +179,12 @@ public class Lab3_RafaelFlores_31711187 {
                         if(ejercito.get(pos).getSoldado().size() < 6){
                             System.out.print("Ingrese la posicion del soldado que quiere agregar al ejercito: ");
                             int sold = read.nextInt();
-                            ejercito.get(pos).getSoldado.add(soldado.get(sold));
+                            if(sold > soldado.size()-1){
+                                System.out.print("posicion incorrecta");
+                            }else{
+                                ejercito.get(pos).setSoldado(soldado.get(sold));
+                                
+                            }
                         }
                         
                     }
