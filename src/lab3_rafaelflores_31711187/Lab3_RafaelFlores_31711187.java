@@ -105,7 +105,9 @@ public class Lab3_RafaelFlores_31711187 {
                     switch(type){
                         case 1://general
                             System.out.print("Ingrese el nombre del general: ");
+                            read.nextLine();
                             name = read.nextLine();
+                            
                             System.out.print("Ingrese de donde es " + name + " : ");
                             lugar = read.next();
                             System.out.print("Cuantos años lleva al mando "+name+" : ");
@@ -200,7 +202,23 @@ public class Lab3_RafaelFlores_31711187 {
                     armas.add(am);
                     break;
                 case 5:
-                    
+                    System.out.print("Ingrese la posicion del ejercito a la que quiere entrar: ");
+                    pos = read.nextInt();
+                    if (pos > ejercito.size() - 1) {
+                        System.out.print("posicion incorrecta");
+                    } else {
+                        System.out.print("Ingrese la posicion del arma que desea comprar: ");
+                        int gun = read.nextInt();
+                        if (gun > ejercito.size() - 1) {
+                            System.out.print("posicion incorrecta");
+                        } else {
+                            if (ejercito.get(pos).getDinero() < armas.get(gun).getPrecio()){
+                                System.out.print("No tiene suficiente dinero");
+                            }
+
+                        }
+
+                    }
                     break;
                 case 6://listar arma
                     ListarArma();
@@ -214,16 +232,34 @@ public class Lab3_RafaelFlores_31711187 {
                 case 9:
                     
                     break;
-                case 10:
-                    
+                case 10://eliminar arma
+                    System.out.print("Ingrese la posicion de la arma que quiere eliminar: ");
+                    pos = read.nextInt();
+                    if (pos > ejercito.size() - 1) {
+                        System.out.print("posicion incorrecta");
+                    } else {
+                        armas.remove(pos);
+                    }
                     break;
-                case 11:
-                    
+                case 11://eliminar ejercito
+                    System.out.print("Ingrese la posicion del ejercito que quiere eliminar: ");
+                    pos = read.nextInt();
+                    if (pos > ejercito.size() - 1) {
+                        System.out.print("posicion incorrecta");
+                    } else {
+                        ejercito.remove(pos);
+                    }
                     break;
-                case 12:
-                    
+                case 12://eliminar soldado
+                    System.out.print("Ingrese la posicion del soldado que quiere eliminar: ");
+                    pos = read.nextInt();
+                    if (pos > ejercito.size() - 1) {
+                        System.out.print("posicion incorrecta");
+                    } else {
+                        soldado.remove(pos);
+                    }
                     break;
-                case 13:
+                case 13://jugar
                     
                     break;
                 case 0:
@@ -565,15 +601,15 @@ public class Lab3_RafaelFlores_31711187 {
        System.out.println("| No. |       Nombre       |       Region       | Victorias | Dinero |");
        System.out.println("+-----+--------------------+--------------------+-----------+--------+");
        for (int i = 0; i < ejercito.size(); i++) {
-           System.out.println("|  "+i+"  |"+ejercito.get(i).toString());
+           System.out.println("|  "+i+"  "+ejercito.get(i).toString());
            System.out.println("+-----+--------------------+--------------------+-----------+--------+");
        }
    } 
     
    public static void ListarSoldado(ArrayList<Soldado> temp){
-       System.out.println("+-----+--------------------+--------------------+------+------+--------------+------+-------+------+");
-       System.out.println("| No. |       Nombre       |       Lugar        | Sexo | Edad | Año al Mando | Arma | Bomba | Tipo |");
-       System.out.println("+-----+--------------------+--------------------+------+------+--------------+------+-------+------+");
+       System.out.println("+-----+--------------------+--------------------+------+------+--------------+------+");
+       System.out.println("| No. |       Nombre       |       Lugar        | Sexo | Edad | Año al Mando | Tipo |");
+       System.out.println("+-----+--------------------+--------------------+------+------+--------------+------+");
        for (int i = 0; i < temp.size(); i++) {
            System.out.println("|  "+i+"  |"+temp.get(i).toString()+" | "+temp.get(i).getClass().getName());
            System.out.println("+-----+--------------------+--------------------+------+------+--------------+------+-------+------+");
@@ -584,8 +620,8 @@ public class Lab3_RafaelFlores_31711187 {
        System.out.println("+-----+--------------------+--------------------+-----------+---------+------------+");
        System.out.println("| No. |       Nombre       |       Precio       | Material  | Alcance | Automatica |");
        System.out.println("+-----+--------------------+--------------------+-----------+---------+------------+");
-       for (int i = 0; i < ejercito.size(); i++) {
-           System.out.println("|  "+i+"  |"+ejercito.get(i).toString()+" | "+ejercito.get(i).getClass().getName());
+       for (int i = 0; i < armas.size(); i++) {
+           System.out.println("|  "+i+"  |"+armas.get(i).toString()+" | "+armas.get(i).getClass().getName());
            System.out.println("+-----+--------------------+--------------------+-----------+--------+");
        }
    }
