@@ -13,8 +13,9 @@ public class Lab3_RafaelFlores_31711187 {
     public static ArrayList<Soldado> soldado = new ArrayList();
     public static ArrayList<Arma> armas = new ArrayList();
     public static String[][] Tablero = new String[10][10];
-    public static String[][] vistaJ1 = new String[10][10];
-    public static String[][] vistaJ2 = new String[10][10];
+    public static String[][] vistaJ1 = new String[5][2];
+    public static String[][] vistaJ2 = new String[5][2];
+    public static int jugador1, jugador2;
     
     
     public static void main(String[] args) {
@@ -276,24 +277,25 @@ public class Lab3_RafaelFlores_31711187 {
                     break;
                 case 9:
                     if (ejercito.isEmpty()) {
-                            System.out.println("No hay nada que mostrar!");
-                        }else{
-                            ListarEjercito();
-                            System.out.println("Ingrese la posición a modificar: ");
-                            pos = read.nextInt();
-                            if (pos < 0 || pos > ejercito.size() - 1) {
-                                System.out.println("Abortando! Debe ingresar una posición válida");
-                            } else {
-                                System.out.println("Ingrese el número de lo que desea modificar:"
-                                        + "\n\t 1. Nombre del ejercito"
-                                        + "\n\t 2. Regio del ejercito"
-                                        + "\n\t 3. Cantidad de victorias"
-                                        + "\n\t 4. Cantidad de dinero");
-                                int modOp = read.nextInt();
-                                Modificar(ejercito, pos, modOp, "");
-                                System.out.println("Su Modificación fue exitosa!");
-                            }
+                        System.out.println("No hay nada que mostrar!");
+                    } else {
+                        ListarEjercito();
+                        System.out.println("Ingrese la posición a modificar: ");
+                        pos = read.nextInt();
+                        if (pos < 0 || pos > ejercito.size() - 1) {
+                            System.out.println("Abortando! Debe ingresar una posición válida");
+                        } else {
+                            System.out.println("Ingrese el número de lo que desea modificar:"
+                                    + "\n\t 1. Nombre del ejercito"
+                                    + "\n\t 2. Regio del ejercito"
+                                    + "\n\t 3. Cantidad de victorias"
+                                    + "\n\t 4. Cantidad de dinero");
+                            int modOp = read.nextInt();
+                            Modificar(ejercito, pos, modOp, "");
+                            System.out.println("Su Modificación fue exitosa!");
                         }
+
+                    }
                     break;
                 case 10://eliminar arma
                     System.out.print("Ingrese la posicion de la arma que quiere eliminar: ");
@@ -323,7 +325,7 @@ public class Lab3_RafaelFlores_31711187 {
                     }
                     break;
                 case 13://jugar
-                    
+                    InitJuego();
                     break;
                 case 0:
                     resp = 'n';
@@ -688,9 +690,47 @@ public class Lab3_RafaelFlores_31711187 {
            System.out.println("+-----+--------------------+--------------------+-----------+---------+------------+");
        }
    }
+   
+   public static void CargarTablero(String[][] temp){
+       int cord1, cord2;
+       for (int i = 0; i < 5; i++) {
+           do{
+                cord1 = rand.nextInt(10);
+                cord2 = rand.nextInt(10);
+                if (Tablero[cord1][cord2].equals("")) {
+                    Tablero[cord1][cord2] = "*";
+                    temp[i][0] = String.valueOf(cord1);
+                    temp[i][1] = String.valueOf(cord2);
+                }
+            }while(true);
+       }
+       
+       
+   }
     
     public static void InitJuego(){
         ListarEjercito();
+        System.out.println("Escoja el ejercito para el jugador 1:");
+        do {
+            jugador1 = read.nextInt();
+            if (jugador1 < 0 || jugador1 >= ejercito.size()) {
+                System.out.println("No existe el ejercito que escogio!!!");
+            }else{
+                CargarTablero(vistaJ1);
+                break;
+            }
+        } while (true);
+        System.out.println("Escoja el ejercito para el jugador 2:");
+        do {
+            jugador2 = read.nextInt();
+            if (jugador2 < 0 || jugador2 >= ejercito.size()) {
+                System.out.println("No existe el ejercito que escogio!!!");
+            }else{
+                CargarTablero(vistaJ1);
+                break;
+            }
+        } while (true);
+        
     }
     //comenza aqui
     
