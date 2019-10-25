@@ -34,7 +34,7 @@ public class Arma {
     @Override
     public String toString() {
         //return "Arma{" + "nombre=" + nombre + ", precio=" + precio + '}';
-        String patron = "|%20s|%17.2f|";
+        String patron = "|%20s|%20.2f";
         return String.format(patron, this.getNombre(), this.getPrecio());
     }
     
