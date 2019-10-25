@@ -93,27 +93,93 @@ public class Lab3_RafaelFlores_31711187 {
                     ejercito.add(ej);
                     break;
                 case 2:
-                    System.out.print("Ingrese el nombre del soldado: ");
-                    String name = read.nextLine();
-                    System.out.print("Ingrese de donde es "+name+" : ");
-                    String lugar = read.next();
-                    System.out.print("Ingrese la edad de "+name+" : ");
-                    int edad = read.nextInt();
-                    System.out.print("de que sexo es "+name+" [1- Masculino][2- Femenino]: ");
-                    int n = read.nextInt();
-                    String sexo;
-                    if(n == 1)
-                        sexo = "Masculino";
-                    else
-                        sexo = "Femenino";
-                    Soldado s = new Soldado();
-                    s.setLugar(lugar);
-                    s.setNombre(name);
-                    s.setSexo(sexo);
-                    s.setEdad(edad);
-                    soldado.add(s);
+                    System.out.print("Que tipo de soldado es [1- general][2- Caballero][3- Ejecutor]: ");
+                    int type = read.nextInt();
+                    int n;
+                    int edad;
+                    String name, lugar, sexo;
+                    switch(type){
+                        case 1://general
+                            System.out.print("Ingrese el nombre del general: ");
+                            name = read.nextLine();
+                            System.out.print("Ingrese de donde es " + name + " : ");
+                            lugar = read.next();
+                            System.out.print("Cuantos años lleva al mando "+name+" : ");
+                            int AM = read.nextInt();
+                            System.out.print("Ingrese la edad de " + name + " : ");
+                            edad = read.nextInt();
+                            System.out.print("de que sexo es " + name + " [1- Masculino][2- Femenino]: ");
+                            n = read.nextInt();
+                            if (n == 1) {
+                                sexo = "Masculino";
+                            } else {
+                                sexo = "Femenino";
+                            }
+                            Soldado g = new General();
+                            g.setEdad(edad);
+                            g.setNombre(name);
+                            g.setLugar(lugar);
+                            g.setSexo(sexo);
+                            ((General)g).setAñoAlMando(AM);
+                            soldado.add(g);
+                            break;
+                        case 2://caballero
+                            System.out.print("Ingrese el nombre del Caballero: ");
+                            name = read.nextLine();
+                            System.out.print("Ingrese de donde es " + name + " : ");
+                            lugar = read.next();
+                            System.out.print("Ingrese la edad de " + name + " : ");
+                            edad = read.nextInt();
+                            System.out.print("de que sexo es " + name + " [1- Masculino][2- Femenino]: ");
+                            n = read.nextInt();
+                            if (n == 1) {
+                                sexo = "Masculino";
+                            } else {
+                                sexo = "Femenino";
+                            }
+                            Soldado c = new Caballero();
+                            c.setEdad(edad);
+                            c.setNombre(name);
+                            c.setLugar(lugar);
+                            c.setSexo(sexo);
+                            soldado.add(c);
+                            break;
+                        case 3://ejecutor
+                            System.out.print("Ingrese el nombre del Caballero: ");
+                            name = read.nextLine();
+                            System.out.print("Ingrese de donde es " + name + " : ");
+                            lugar = read.next();
+                            System.out.print("Ingrese la edad de " + name + " : ");
+                            edad = read.nextInt();
+                            System.out.print("de que sexo es " + name + " [1- Masculino][2- Femenino]: ");
+                            n = read.nextInt();
+                            if (n == 1) {
+                                sexo = "Masculino";
+                            } else {
+                                sexo = "Femenino";
+                            }
+                            Soldado e = new Ejecutor();
+                            e.setEdad(edad);
+                            e.setNombre(name);
+                            e.setLugar(lugar);
+                            e.setSexo(sexo);
+                            soldado.add(e);
+                            break;
+                    }
                     break;
                 case 3:
+                    System.out.print("Ingrese la posicion del ejercito a la que quiere agregarlo: ");
+                    int pos = read.nextInt();
+                    if (pos > ejercito.size() - 1) {
+                        System.out.print("posicion incorrecta");
+                    } else {
+                        if(ejercito.get(pos).getSoldado().size() < 6){
+                            System.out.print("Ingrese la posicion del soldado que quiere agregar al ejercito: ");
+                            int sold = read.nextInt();
+                            ejercito.get(pos).getSoldado.add(soldado.get(sold));
+                        }
+                        
+                    }
                     System.out.print("Que tipo de soldado es: ");
                     int tipo = read.nextInt();
                     break;
@@ -122,7 +188,10 @@ public class Lab3_RafaelFlores_31711187 {
                     name = read.next();
                     System.out.print("Cual es el valor de "+name+" : ");
                     int precio = read.nextInt();
-                    
+                    Arma am = new Arma();
+                    am.setNombre(name);
+                    am.setPrecio(precio);
+                    armas.add(am);
                     break;
                 case 5:
                     
