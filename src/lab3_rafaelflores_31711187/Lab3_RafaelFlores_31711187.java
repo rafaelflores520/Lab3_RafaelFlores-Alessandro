@@ -11,6 +11,7 @@ public class Lab3_RafaelFlores_31711187 {
     public static ArrayList<Soldado> soldado = new ArrayList();
     public static ArrayList<Arma> armas = new ArrayList();
     public static String[][] Tablero = new String[10][10];
+    
     public static void main(String[] args) {
         char resp = 's';
         while(resp == 's'){
@@ -33,6 +34,7 @@ public class Lab3_RafaelFlores_31711187 {
                 case 1:
                     System.out.print("Ingrese el nombre del ejercito: ");
                     String nombre = read.next();
+                    System.out.print("Ingrese la region de "+nombre+" :");
                     String region = read.next();
                     System.out.print("Cuantas victorias tiene "+nombre+" : ");
                     int CantVic = read.nextInt();
@@ -53,13 +55,28 @@ public class Lab3_RafaelFlores_31711187 {
                     System.out.print("Ingrese la edad de "+name+" : ");
                     int edad = read.nextInt();
                     System.out.print("de que sexo es "+name+" [1- Masculino][2- Femenino]: ");
-                    int sexo = read.nextInt();
+                    int n = read.nextInt();
+                    String sexo;
+                    if(n == 1)
+                        sexo = "Masculino";
+                    else
+                        sexo = "Femenino";
+                    Soldado s = new Soldado();
+                    s.setLugar(lugar);
+                    s.setNombre(name);
+                    s.setSexo(sexo);
+                    s.setEdad(edad);
+                    soldado.add(s);
                     break;
                 case 3:
                     System.out.print("Que tipo de soldado es: ");
                     int tipo = read.nextInt();
                     break;
                 case 4:
+                    System.out.print("Cual es el nombre del arma: ");
+                    name = read.next();
+                    System.out.print("Cual es el valor de "+name+" : ");
+                    int precio = read.nextInt();
                     
                     break;
                 case 5:
