@@ -64,7 +64,12 @@ public class Lab3_RafaelFlores_31711187 {
     public static void main(String[] args) {
         char resp = 's';
         while(resp == 's'){
-            soldado.add(new General(12, new Arma("AK47", (float)523.32), "juan", "Valle", "masculino", 12));
+            soldado.add(new General(2,new Arma(), "Juan", "SPS", "M", 45));
+            ejercito.add(new Ejercicto("Rusia", "Europa", 0, 100000));
+            soldado.add(new General(12, new Arma("AK47", (float)523.32), "juan", "Valle", "M", 12));
+            armas.add(new Bomba(2, "Polvora", "Redonda", ((float)23.17)));
+            armas.add(new Rifle(4, 1, true, "AK-47",((float)100.17)));
+            armas.add(new ArmaBlanca("Metal", "Navaja", ((float)10.17)));
             System.out.println("1- Agregar ejercito"
                     + "\n2- Agregar un soldado"
                     + "\n3- Agregar soldado a un ejercito"
@@ -118,9 +123,9 @@ public class Lab3_RafaelFlores_31711187 {
                             System.out.print("de que sexo es " + name + " [1- Masculino][2- Femenino]: ");
                             n = read.nextInt();
                             if (n == 1) {
-                                sexo = "Masculino";
+                                sexo = "M";
                             } else {
-                                sexo = "Femenino";
+                                sexo = "F";
                             }
                             Soldado g = new General();
                             g.setEdad(edad);
@@ -684,18 +689,18 @@ public class Lab3_RafaelFlores_31711187 {
        System.out.println("| No. |       Nombre       |       Lugar        | Sexo | Edad | Año al Mando | Tipo |");
        System.out.println("+-----+--------------------+--------------------+------+------+--------------+------+");
        for (int i = 0; i < temp.size(); i++) {
-           System.out.println("|  "+i+"  |"+temp.get(i).toString()+" | "+temp.get(i).getClass().getName());
-           System.out.println("+-----+--------------------+--------------------+------+------+--------------+------+-------+------+");
+           System.out.println("|  "+i+"  "+temp.get(i).toString()+temp.get(i).getClass().getSimpleName()+"|");
+           System.out.println("+-----+--------------------+--------------------+------+------+--------------+------+");
        }
    }
    
    public static void ListarArma(){
-       System.out.println("+-----+--------------------+--------------------+-----------+---------+------------+");
-       System.out.println("| No. |       Nombre       |       Precio       | Material  | Alcance | Automatica |");
-       System.out.println("+-----+--------------------+--------------------+-----------+---------+------------+");
+       System.out.println("+-----+--------------------+--------------------+-----------+---------+------------+------+");
+       System.out.println("| No. |       Nombre       |       Precio       | Material  | Alcance | Automatica | Tipo |");
+       System.out.println("+-----+--------------------+--------------------+-----------+---------+------------+------+");
        for (int i = 0; i < armas.size(); i++) {
-           System.out.println("|  "+i+"  |"+armas.get(i).toString()+" | "+armas.get(i).getClass().getName());
-           System.out.println("+-----+--------------------+--------------------+-----------+--------+");
+           System.out.println("|  "+i+"  "+armas.get(i).toString()+armas.get(i).getClass().getSimpleName()+"|");
+           System.out.println("+-----+--------------------+--------------------+-----------+---------+------------+");
        }
    }
     

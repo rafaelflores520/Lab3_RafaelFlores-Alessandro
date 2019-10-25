@@ -45,7 +45,7 @@ public class Rifle extends Arma{
     @Override
     public String toString() {
         //return super.toString()+"Rifle{" + "linealAlcanceMax=" + linealAlcanceMax + ", linealAlcanceMin=" + linealAlcanceMin + ", esAutom\u00e1tica=" + esAutomática + '}';
-        String patron = "|%11s|%9d|%12s|";
+        String patron = super.toString()+"|%11s|%9d|%12s|";
         return String.format(patron, "n/a", this.getLinealAlcanceMax(), this.isEsAutomática());
     }
     
