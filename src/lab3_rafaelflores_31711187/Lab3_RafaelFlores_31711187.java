@@ -233,14 +233,25 @@ public class Lab3_RafaelFlores_31711187 {
                                 ListarSoldado(ejercito.get(pos).getSoldado());
                                 System.out.print("A que soldado se la quiere agregar: ");
                                 int m = read.nextInt();
+                                
                                 switch(ejercito.get(pos).getSoldadoEspecifico(m).getClass().getSimpleName()){
                                     case "General":
-                                        Soldado g = ejercito.get(pos).getSoldadoEspecifico(m);
-                                        ((General)g).setArma(armas.get(gun));
+                                        if(armas.get(gun).getClass().getSimpleName().equals("Bombas") ){
+                                            System.out.println("No se le puede agregar bombas a un general.");
+                                            
+                                        }else{
+                                            Soldado g = ejercito.get(pos).getSoldadoEspecifico(m);
+                                            ((General)g).setArma(armas.get(gun));
+                                        }
                                         break;
                                     case "Caballero":
-                                        Soldado c = ejercito.get(pos).getSoldadoEspecifico(m);
+                                        if(armas.get(gun).getClass().getSimpleName().equals("Bombas") ){
+                                            System.out.println("No se le puede agregar bombas a un caballero.");
+                                            
+                                        }else{
+                                            Soldado c = ejercito.get(pos).getSoldadoEspecifico(m);
                                         ((General)c).setArma(armas.get(gun));
+                                        }
                                         break;
                                     case "Ejecutor":
                                         Soldado e = ejercito.get(pos).getSoldadoEspecifico(m);
@@ -264,6 +275,7 @@ public class Lab3_RafaelFlores_31711187 {
                     ListarSoldado(soldado);
                     break;
                 case 9:
+<<<<<<< HEAD
                     /*if (registro.isEmpty()) {
                             System.out.println("No hay nada que mostrar!");
                         }else{
@@ -285,6 +297,9 @@ public class Lab3_RafaelFlores_31711187 {
                                 System.out.println("Su Modificación fue exitosa!");
                             }
                         }*/
+=======
+                    //ya lo vamos a ahcer
+>>>>>>> f5ebf34a4c00b6fc5096ee5b5d5d489d8c71c08a
                     break;
                 case 10://eliminar arma
                     System.out.print("Ingrese la posicion de la arma que quiere eliminar: ");
