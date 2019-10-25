@@ -24,7 +24,9 @@ public class ArmaBlanca extends Arma{
 
     @Override
     public String toString() {
-        return super.toString()+"ArmaBlanca{" + "material=" + material + '}';
+        //return super.toString()+"ArmaBlanca{" + "material=" + material + '}';
+        String patron = "|%11s|%9d|%12s|";
+        return String.format(patron, this.getMaterial(), "n/a", "n/a");
     }
     
     

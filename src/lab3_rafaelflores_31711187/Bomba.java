@@ -34,7 +34,9 @@ public class Bomba extends Arma {
 
     @Override
     public String toString() {
-        return super.toString()+"Bomba{" + "areaAlcance=" + areaAlcance + ", material=" + material + '}';
+        //return super.toString()+"Bomba{" + "areaAlcance=" + areaAlcance + ", material=" + material + '}';
+        String patron = "|%11s|%9d|%12s|";
+        return String.format(patron, this.getMaterial(), this.getAreaAlcance(), "n/a");
     }
     
 }

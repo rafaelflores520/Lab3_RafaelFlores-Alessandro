@@ -35,7 +35,9 @@ public class Ejecutor extends Soldado{
 
     @Override
     public String toString() {
-        return "Ejecutor{" + "arma=" + arma + ", bomba=" + bomba + '}';
+        //return "Ejecutor{" + "arma=" + arma + ", bomba=" + bomba + '}';
+        String patron = super.toString()+"|%13s|";
+        return String.format(patron, "n/a");
     }
     
 }

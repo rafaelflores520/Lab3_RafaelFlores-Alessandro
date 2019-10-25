@@ -56,7 +56,8 @@ public class Soldado {
 
     @Override
     public String toString() {
-        return "Soldado{" + "nombre=" + nombre + ", lugar=" + lugar + ", sexo=" + sexo + ", edad=" + edad + '}';
+        String patron = "|%20s|%20s|%13s|%6d|";
+        return String.format(patron, this.getNombre(), this.getLugar(), this.getSexo(), this.getEdad());
     }
     
     

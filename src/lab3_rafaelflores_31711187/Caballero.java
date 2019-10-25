@@ -26,7 +26,9 @@ public class Caballero extends Soldado{
 
     @Override
     public String toString() {
-        return super.toString()+"Caballero{" + "arma=" + arma + '}';
+        //return super.toString()+"Caballero{" + "arma=" + arma + '}';
+        String patron = super.toString()+"|%13s|";
+        return String.format(patron, "n/a");
     }
     
     

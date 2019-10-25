@@ -34,7 +34,9 @@ public class General extends Soldado{
 
     @Override
     public String toString() {
-        return super.toString()+"General{" + "a\u00f1oAlMando=" + añoAlMando + ", arma=" + arma + '}';
+        //return super.toString()+"General{" + "a\u00f1oAlMando=" + añoAlMando + ", arma=" + arma + '}';
+        String patron = super.toString()+"|%13s|";
+        return String.format(patron, this.getAñoAlMando());
     }
     
     
