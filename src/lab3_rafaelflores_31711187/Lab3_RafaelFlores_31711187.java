@@ -63,6 +63,7 @@ public class Lab3_RafaelFlores_31711187 {
     public static void main(String[] args) {
         char resp = 's';
         while(resp == 's'){
+            soldado.add(new General(12, new Arma("AK47", (float)523.32), "juan", "Valle", "masculino", 12));
             System.out.println("1- Agregar ejercito"
                     + "\n2- Agregar un soldado"
                     + "\n3- Agregar soldado a un ejercito"
@@ -183,13 +184,10 @@ public class Lab3_RafaelFlores_31711187 {
                                 System.out.print("posicion incorrecta");
                             }else{
                                 ejercito.get(pos).setSoldado(soldado.get(sold));
-                                
                             }
                         }
                         
                     }
-                    System.out.print("Que tipo de soldado es: ");
-                    int tipo = read.nextInt();
                     break;
                 case 4:
                     System.out.print("Cual es el nombre del arma: ");
@@ -204,14 +202,14 @@ public class Lab3_RafaelFlores_31711187 {
                 case 5:
                     
                     break;
-                case 6:
-                    
+                case 6://listar arma
+                    ListarArma();
                     break;
                 case 7:
-                    
+                    ListarEjercito();
                     break;
                 case 8:
-                    
+                    ListarSoldado(soldado);
                     break;
                 case 9:
                     
@@ -577,7 +575,7 @@ public class Lab3_RafaelFlores_31711187 {
        System.out.println("| No. |       Nombre       |       Lugar        | Sexo | Edad | Año al Mando | Arma | Bomba | Tipo |");
        System.out.println("+-----+--------------------+--------------------+------+------+--------------+------+-------+------+");
        for (int i = 0; i < temp.size(); i++) {
-           System.out.println("|  "+i+"  |"+ejercito.get(i).toString()+" | "+ejercito.get(i).getClass().getName());
+           System.out.println("|  "+i+"  |"+temp.get(i).toString()+" | "+temp.get(i).getClass().getName());
            System.out.println("+-----+--------------------+--------------------+------+------+--------------+------+-------+------+");
        }
    }
