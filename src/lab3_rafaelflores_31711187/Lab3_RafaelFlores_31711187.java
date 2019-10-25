@@ -498,11 +498,11 @@ public class Lab3_RafaelFlores_31711187 {
        }
    } 
     
-   public static void ListarSoldado(){
+   public static void ListarSoldado(ArrayList<Soldado> temp){
        System.out.println("+-----+--------------------+--------------------+------+------+--------------+------+-------+------+");
        System.out.println("| No. |       Nombre       |       Lugar        | Sexo | Edad | Año al Mando | Arma | Bomba | Tipo |");
        System.out.println("+-----+--------------------+--------------------+------+------+--------------+------+-------+------+");
-       for (int i = 0; i < ejercito.size(); i++) {
+       for (int i = 0; i < temp.size(); i++) {
            System.out.println("|  "+i+"  |"+ejercito.get(i).toString()+" | "+ejercito.get(i).getClass().getName());
            System.out.println("+-----+--------------------+--------------------+------+------+--------------+------+-------+------+");
        }
