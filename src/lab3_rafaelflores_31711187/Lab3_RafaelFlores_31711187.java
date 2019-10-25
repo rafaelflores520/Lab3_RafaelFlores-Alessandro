@@ -94,6 +94,7 @@ public class Lab3_RafaelFlores_31711187 {
                             break;
                         case 2://caballero
                             System.out.print("Ingrese el nombre del Caballero: ");
+                            read.nextLine();
                             name = read.nextLine();
                             System.out.print("Ingrese de donde es " + name + " : ");
                             lugar = read.next();
@@ -114,7 +115,8 @@ public class Lab3_RafaelFlores_31711187 {
                             soldado.add(c);
                             break;
                         case 3://ejecutor
-                            System.out.print("Ingrese el nombre del Caballero: ");
+                            System.out.print("Ingrese el nombre del Ejecutor: ");
+                            read.nextLine();
                             name = read.nextLine();
                             System.out.print("Ingrese de donde es " + name + " : ");
                             lugar = read.next();
@@ -142,14 +144,17 @@ public class Lab3_RafaelFlores_31711187 {
                     if (pos > ejercito.size() - 1) {
                         System.out.print("posicion incorrecta");
                     } else {
-                        if(ejercito.get(pos).getSoldado().size() < 6){
+                        if(ejercito.get(pos).getSoldado().size() < 5){
                             System.out.print("Ingrese la posicion del soldado que quiere agregar al ejercito: ");
                             int sold = read.nextInt();
                             if(sold > soldado.size()-1){
                                 System.out.print("posicion incorrecta");
                             }else{
                                 ejercito.get(pos).setSoldado(soldado.get(sold));
+                                soldado.remove(sold);
                             }
+                        }else{
+                            System.out.println("El ejercito ya tiene 5 soldados");
                         }
                         
                     }
@@ -287,7 +292,7 @@ public class Lab3_RafaelFlores_31711187 {
                         } else {
                             System.out.println("Ingrese el número de lo que desea modificar:"
                                     + "\n\t 1. Nombre del ejercito"
-                                    + "\n\t 2. Regio del ejercito"
+                                    + "\n\t 2. Region del ejercito"
                                     + "\n\t 3. Cantidad de victorias"
                                     + "\n\t 4. Cantidad de dinero");
                             int modOp = read.nextInt();
@@ -298,7 +303,7 @@ public class Lab3_RafaelFlores_31711187 {
                     }
                     break;
                 case 10://eliminar arma
-                    System.out.print("Ingrese la posicion de la arma que quiere eliminar: ");
+                    System.out.print("Ingrese la posicion del arma que quiere eliminar: ");
                     pos = read.nextInt();
                     if (pos > ejercito.size() - 1) {
                         System.out.print("posicion incorrecta");
