@@ -12,6 +12,51 @@ public class Lab3_RafaelFlores_31711187 {
     public static ArrayList<Arma> armas = new ArrayList();
     public static String[][] Tablero = new String[10][10];
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     public static void main(String[] args) {
         char resp = 's';
         while(resp == 's'){
