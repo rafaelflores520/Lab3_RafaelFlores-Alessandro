@@ -26,7 +26,7 @@ public class Lab3_RafaelFlores_31711187 {
             armas.add(new Bomba(2, "Polvora", "Redonda", ((float)23.17)));
             armas.add(new Rifle(4, 1, true, "AK-47",((float)100.17)));
             armas.add(new ArmaBlanca("Metal", "Navaja", ((float)10.17)));
-            System.out.println("1- Agregar ejercito"
+            System.out.print("1- Agregar ejercito"
                     + "\n2- Agregar un soldado"
                     + "\n3- Agregar soldado a un ejercito"
                     + "\n4- Agregar Arma"
@@ -37,9 +37,9 @@ public class Lab3_RafaelFlores_31711187 {
                     + "\n9- Modificar ejercito"
                     + "\n10- Eliminar arma"
                     + "\n11- Eliminar ejercito"
-                    + "\n12- Eliminar Soldado:"
+                    + "\n12- Eliminar Soldado"
                     + "\n13- Jugar"
-                    + "\n0- Salir");
+                    + "\n0- Salir: ");
             int opcion = read.nextInt();
             switch(opcion){
                 case 1:
