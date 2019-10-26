@@ -20,23 +20,23 @@ public class Lab3_RafaelFlores_31711187 {
     
     public static void main(String[] args) {
         char resp = 's';
+        soldado.add(new General(2, new Arma(), "Juan", "SPS", "M", 45));
+        soldado.add(new General(2, new Arma(), "El Maje", "tegus", "M", 45));
+        soldado.add(new General(2, new Arma(), "gabriel", "El trapiche", "M", 45));
+        soldado.add(new General(2, new Arma(), "Ale", "Intibuca", "M", 45));
+        soldado.add(new General(2, new Arma(), "Hitler", "Por alla", "M", 45));
+        soldado.add(new General(2, new Arma(), "Valle Valle", "trujillo", "M", 45));
+        soldado.add(new General(2, new Arma(), "cachiro", "Atlantida", "M", 45));
+        soldado.add(new General(2, new Arma(), "TUlio", "sur", "M", 45));
+        soldado.add(new General(2, new Arma(), "Polo", "Choloma", "M", 45));
+        soldado.add(new General(2, new Arma(), "Pedro", "Olancho", "M", 45));
+        ejercito.add(new Ejercicto("Rusia", "Europa", 0, 100000));
+        ejercito.add(new Ejercicto("Union Sovietica", "mexico", 0, 10000));
+        soldado.add(new General(12, new Arma("AK47", (float) 523.32), "juan", "Valle", "M", 12));
+        armas.add(new Bomba(2, "Polvora", "Redonda", ((float) 23.17)));
+        armas.add(new Rifle(4, 1, true, "AK-47", ((float) 100.17)));
+        armas.add(new ArmaBlanca("Metal", "Navaja", ((float) 10.17)));
         while(resp == 's'){
-            soldado.add(new General(2,new Arma(), "Juan", "SPS", "M", 45));
-            soldado.add(new General(2,new Arma(), "El Maje", "tegus", "M", 45));
-            soldado.add(new General(2,new Arma(), "gabriel", "El trapiche", "M", 45));
-            soldado.add(new General(2,new Arma(), "Ale", "Intibuca", "M", 45));
-            soldado.add(new General(2,new Arma(), "Hitler", "Por alla", "M", 45));
-            soldado.add(new General(2,new Arma(), "Valle Valle", "trujillo", "M", 45));
-            soldado.add(new General(2,new Arma(), "cachiro", "Atlantida", "M", 45));
-            soldado.add(new General(2,new Arma(), "TUlio", "sur", "M", 45));
-            soldado.add(new General(2,new Arma(), "Polo", "Choloma", "M", 45));
-            soldado.add(new General(2,new Arma(), "Pedro", "Olancho", "M", 45));
-            ejercito.add(new Ejercicto("Rusia", "Europa", 0, 100000));
-            ejercito.add(new Ejercicto("Union Sovietica", "mexico", 0, 10000));
-            soldado.add(new General(12, new Arma("AK47", (float)523.32), "juan", "Valle", "M", 12));
-            armas.add(new Bomba(2, "Polvora", "Redonda", ((float)23.17)));
-            armas.add(new Rifle(4, 1, true, "AK-47",((float)100.17)));
-            armas.add(new ArmaBlanca("Metal", "Navaja", ((float)10.17)));
             System.out.print("1- Agregar ejercito"
                     + "\n2- Agregar un soldado"
                     + "\n3- Agregar soldado a un ejercito"
