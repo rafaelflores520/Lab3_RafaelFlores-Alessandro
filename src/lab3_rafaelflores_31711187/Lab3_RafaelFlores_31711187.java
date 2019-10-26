@@ -149,6 +149,7 @@ public class Lab3_RafaelFlores_31711187 {
                     }
                     break;
                 case 3:
+                    ListarEjercito();
                     System.out.print("Ingrese la posicion del ejercito a la que quiere agregarlo: ");
                     int pos = read.nextInt();
                     if (pos > ejercito.size() - 1) {
@@ -165,7 +166,11 @@ public class Lab3_RafaelFlores_31711187 {
                                 soldado.remove(sold);
                             }
                         }else{
-                            System.out.println("El ejercito ya tiene 5 soldados");
+                            System.out.println("\n"
+                                    + "n"
+                                    + "El ejercito ya tiene 5 soldados"
+                                    + "\n"
+                                    + "\n");
                         }
                         
                     }
