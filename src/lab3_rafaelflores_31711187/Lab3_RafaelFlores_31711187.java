@@ -334,334 +334,8 @@ public class Lab3_RafaelFlores_31711187 {
         }//fin del while
         
     }//fin del main
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-   public static void ListarEjercito(){
+   
+    public static void ListarEjercito(){
        System.out.println("+-----+--------------------+--------------------+-----------+--------+");
        System.out.println("| No. |       Nombre       |       Region       | Victorias | Dinero |");
        System.out.println("+-----+--------------------+--------------------+-----------+--------+");
@@ -691,21 +365,36 @@ public class Lab3_RafaelFlores_31711187 {
        }
    }
    
+   public static void SetTablero(){
+       for (int i = 0; i < Tablero.length; i++) {
+           for (int j = 0; j < Tablero.length; j++) {
+               Tablero[i][j] = "[ ]";
+           }
+       }
+   }
+   
    public static void CargarTablero(String[][] temp){
        int cord1, cord2;
        for (int i = 0; i < 5; i++) {
            do{
                 cord1 = rand.nextInt(10);
                 cord2 = rand.nextInt(10);
-                if (Tablero[cord1][cord2].equals("")) {
-                    Tablero[cord1][cord2] = "*";
+                if (Tablero[cord1][cord2].equals("[ ]")) {
                     temp[i][0] = String.valueOf(cord1);
                     temp[i][1] = String.valueOf(cord2);
                 }
             }while(true);
        }
-       
-       
+   }
+   
+   public static void ImprimirTablero(String[][] temp){
+       for (int i = 0; i < temp.length; i++) {
+           for (int j = 0; j < temp[i].length-1; j++) {
+               int c1 = Integer.valueOf(temp[i][j]);
+               int c2 = Integer.valueOf(temp[i][j]);
+               Tablero[c1][c2] = "[S-"+i+"]";
+           }
+       }
    }
     
     public static void InitJuego(){
@@ -732,7 +421,42 @@ public class Lab3_RafaelFlores_31711187 {
         } while (true);
         
     }
-    //comenza aqui
+    
+    public static void Partida(){
+        boolean game = true;
+        int op;
+        while(true){
+            if (game) {
+                ImprimirTablero(vistaJ1);
+                System.out.println("\n\nLe mostraremos sus Soldados");
+                ListarSoldado(ejercito.get(jugador1).getSoldado());
+                System.out.println("Que desea hacer?"
+                        + "\n\t 1. Atacar"
+                        + "\n\t 2. Rendirse");
+                op = read.nextInt();
+                if (op == 1) {
+                    //Piu Piu Piu
+                }else{
+                    System.out.println("El jugador 1 se ha rendido!!!");
+                }
+            }else{
+                ImprimirTablero(vistaJ2);
+                System.out.println("\n\nLe mostraremos sus Soldados");
+                ListarSoldado(ejercito.get(jugador2).getSoldado());
+                System.out.println("Que desea hacer?"
+                        + "\n\t 1. Atacar"
+                        + "\n\t 2. Rendirse");
+                op = read.nextInt();
+                if (op == 1) {
+                    //Piu Piu Piu
+                }else{
+                    System.out.println("El jugador 2 se ha rendido!!!");
+                }
+            }
+        }
+    }
+    
+    
     
     public static void Modificar(ArrayList<Ejercicto> temp, int pos, int op, String nivel){
         switch(op){
